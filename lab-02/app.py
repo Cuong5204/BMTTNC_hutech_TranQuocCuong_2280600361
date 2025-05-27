@@ -8,6 +8,9 @@ app = Flask(__name__)
 
 # Khởi tạo đối tượng mã hóa
 vigenere = VigenereCipher()
+railfence = RailFenceCipher()
+playfair = PlayFairCipher()
+transposition = TranspositionCipher()
 
 # === Home ===
 @app.route("/")
