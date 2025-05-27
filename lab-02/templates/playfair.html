@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Playfair Cipher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center">Playfair Cipher</h2>
+
+    <form method="POST" action="/playfair/encrypt">
+        <div class="form-group">
+            <label>Văn bản cần mã hóa:</label>
+            <input type="text" name="inputPlainText" class="form-control" required>
+            <label>Khóa:</label>
+            <input type="text" name="inputKeyPlain" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-success">Mã hóa</button>
+    </form>
+
+    <form method="POST" action="/playfair/decrypt" class="mt-4">
+        <div class="form-group">
+            <label>Văn bản mã hóa:</label>
+            <input type="text" name="inputCipherText" class="form-control" required>
+            <label>Khóa:</label>
+            <input type="text" name="inputKeyCipher" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-danger">Giải mã</button>
+    </form>
+
+    {% if result %}
+    <div class="alert alert-info mt-4">
+        <strong>Kết quả:</strong> {{ result }}
+    </div>
+    {% endif %}
+
+    <a href="/" class="btn btn-outline-secondary mt-3">← Về trang chủ</a>
+</div>
+</body>
+</html>
